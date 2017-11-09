@@ -1,0 +1,61 @@
+.tabs{
+    margin: auto;
+    width: 35%;
+    text-align: center;
+    padding-left: 0px;
+    
+
+}
+.tab{
+    margin: auto;
+}
+
+.nav-wrapper{
+    background-color: rgb(0, 0, 0);
+
+
+}
+
+.nav-center{
+    background-color: rgb(50, 50, 88);
+    text-align: center;
+
+}
+
+.video-container{
+    margin: 20px;
+}
+
+body{
+    background-color: black;
+    background-image: url("http://cdn.designbeep.com/wp-content/uploads/2012/01/12.free-carbon-fiber-textures.jpg");
+}
+
+.brand-logo{
+    font-size: 50px !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.card{
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#snippetholder {
+    margin-top: 25px;
+}
+
+#snippet{
+    padding: 0px;
+}
+
+
+
+.container{
+    width: 95%;
+}
+
+.directories{
+    margin-top: 25px;
+    margin-left: 10px;
+}
