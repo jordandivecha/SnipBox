@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
 
   var provider = new firebase.auth.GithubAuthProvider();
 
@@ -12,24 +11,33 @@ $( document ).ready(function() {
       messagingSenderId: "1006600670987"
     };
     firebase.initializeApp(config);
-console.log("1")
-  var x = firebase.auth().signInWithPopup(provider).then(function(result) {
-   
+
+    
+    
+firebase.auth().getRedirectResult().then(function(result) {
+  if (result.credential) {
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
     var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-
-  }).catch(function(error) {
-     console.log(error)
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
+    console.log(token)
+    
+   
     // ...
-  });
+  } else {
+    firebase.auth().signInWithRedirect(provider);
+    
+  }
+  // The signed-in user info.
+  var user = result.user;
+}).catch(function(error) {
+  console.log(error)
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
 
 });
