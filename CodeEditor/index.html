@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="js/codemirror.js"></script>
+        <link rel="stylesheet" href="css/codemirror.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="mode/javascript/javascript.js"></script>
+        <link rel="stylesheet" href="themes/tomorrow-night-bright.css">
+        
+    </head>
+    <body>
+        <script>
+            var code = localStorage.getItem('code');
+            console.log(code)
+            if (code !== null) {
+                code = b64DecodeUnicode(code)
+            } else {
+                code = "";
+            }
+
+
+            var myCodeMirror = CodeMirror("document.body", {
+                value: code,
+                mode:  "javascript",
+                theme: "tomorrow-night-bright",
+                lineNumbers: true,
+            });
+
+            $(document.body).append($("<button>").text("Save").attr("id", "SaveCode"))
+            
+            $(document).on("click", "#SaveCode", function(){
+                localStorage.setItem("code", b64EncodeUnicode(myCodeMirror.getValue()));
+            })
+            function b64DecodeUnicode(str) {
+            // Going backwards: from bytestream, to percent-encoding, to original string.
+                return decodeURIComponent(atob(str).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+            }  
+            function b64EncodeUnicode(str) {
+                return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+                    function toSolidBytes(match, p1) {
+                        return String.fromCharCode('0x' + p1);
+                }));
+            }
+            
+        </script>
+
+            
+    </body>
+</html>
