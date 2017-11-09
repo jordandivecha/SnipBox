@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="js/codemirror.js"></script>
+        <link rel="stylesheet" href="css/codemirror.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="mode/javascript/javascript.js"></script>
+        <link rel="stylesheet" href="themes/base16-dark.css">
+        <link rel="stylesheet" href="themes/tomorrow-night-bright.css">
+        
+    </head>
+    <body>
+        <script>
+            var myCodeMirror = CodeMirror(document.body, {
+                value: b64DecodeUnicode("dmFyIG15Q29kZU1pcnJvciA9IENvZGVNaXJyb3IoZG9jdW1lbnQuYm9keSk7DQp2YXIgbXlDb2RlTWlycm9yID0gQ29kZU1pcnJvcihkb2N1bWVudC5ib2R5LCB7DQogICAgICB2YWx1ZTogYjY0RGVjb2RlVW5pY29kZSgiIiksDQogICAgICAgbW9kZTogICJqYXZhc2NyaXB0Ig0KfSk7"),
+                mode:  "javascript",
+                theme: "tomorrow-night-bright",
+                lineNumbers: true,
+            });
+            myCodeMirror.setOption("")
+            function b64DecodeUnicode(str) {
+            // Going backwards: from bytestream, to percent-encoding, to original string.
+                return decodeURIComponent(atob(str).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+            }  
+            
+        </script>
+
+            
+    </body>
+</html>
