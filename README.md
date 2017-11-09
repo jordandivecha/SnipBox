@@ -1,1 +1,1 @@
-# Snipsy
+# SnipBox
