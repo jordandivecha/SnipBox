@@ -1,1 +1,1 @@
-# SnipSnap
+# Snipsy
