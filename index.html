@@ -8,132 +8,177 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
-    
-     <!-- Materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> 
-  
 
-    <!-- Stylesheet -->
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
 
     <link rel="stylesheet" type="text/css" href="assets/design/style.css">
 
+    <!-- CodeMirror Style -->
     <script src="assets/codeEditor/js/codemirror.js"></script>
     <link rel="stylesheet" href="assets/codeEditor/css/codemirror.css">
     <link rel="stylesheet" href="assets/codeEditor/css/style.css">
-    <script src="assets/codeEditor/mode/javascript/javascript.js"></script>
+
     <link rel="stylesheet" href="assets/codeEditor/themes/tomorrow-night-bright.css">
 
     <title>SnipBox</title>
 </head>
 
 <body>
-    
+
     <!-- Navbar -->
-        <nav class="nav-extended col">
-                <div class="nav-wrapper">
-                  <a href="#" class="brand-logo center">SnipBox</a>
-                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                  <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <nav class="nav-extended col">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">SnipBox</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="sass.html">Sass</a></li>
                     <li><a href="badges.html">Components</a></li>
                     <li><a href="collapsible.html">JavaScript</a></li>
                   </ul> -->
-                  <!-- <ul class="side-nav" id="mobile-demo">
+            <!-- <ul class="side-nav" id="mobile-demo">
                     <li><a href="sass.html">Sass</a></li>
                     <li><a href="badges.html">Components</a></li>
                     <li><a href="collapsible.html">JavaScript</a></li>
                   </ul> -->
-                </div>
-                <div class="nav-center">
-                  <ul class="tabs tabs-transparent">
-                    <li class="tab"><a href="#snippet">Snippet Editor</a></li>
-                    <li class="tab"><a href="#test2">Tab 2</a></li>
-                    <li class="tab"><a href="#tab3">Tab 3</a></li>
-                    <li class="tab"><a href="#tab4">Tab 4</a></li>
-                  </ul>
-                </div>
-              </nav>
-    
+        </div>
+        <div class="nav-center">
+            <ul class="tabs tabs-transparent">
+                <li class="tab">
+                    <a href="#snippet">Editor</a>
+                </li>
+                <li class="tab">
+                    <a href="#test2">Search</a>
+                </li>
+                <li class="tab">
+                    <a href="#tab3">Tab 3</a>
+                </li>
+                <li class="tab">
+                    <a href="#tab4">Tab 4</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Content Container -->
     <div class="container">
         <!-- Snippet Area -->
         <div id="snippetpage">
-            <div class = "row">
-                <div class = "col s2">
+            <div class="row">
+                <div class="col s2">
                     <ul class="collection right directories">
                         <li class="collection-item avatar">
+                            <i class="material-icons circle"></i>
+                            <span class="title">Title</span>
+                            <p>First Line
+                                <br> Second Line
+                            </p>
+                            <a href="#!" class="secondary-content">
+                                <i class="material-icons">grade</i>
+                            </a>
+                        </li>
+                        <li class="collection-item avatar">
                             <i class="material-icons circle">folder</i>
-                                <span class="title">Title</span>
-                                <p>First Line <br>
-                                     Second Line
-                                  </p>
-                                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                                </li>
-                                <li class="collection-item avatar">
-                                  <i class="material-icons circle">folder</i>
-                                  <span class="title">Title</span>
-                                  <p>First Line <br>
-                                     Second Line
-                                  </p>
-                                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                                </li>
-                                <li class="collection-item avatar">
-                                  <i class="material-icons circle green">insert_chart</i>
-                                  <span class="title">Title</span>
-                                  <p>First Line <br>
-                                     Second Line
-                                  </p>
-                                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                                </li>
-                                <li class="collection-item avatar">
-                                  <i class="material-icons circle red">play_arrow</i>
-                                  <span class="title">Title</span>
-                                  <p>First Line <br>
-                                     Second Line
-                                  </p>
-                                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                                </li>
-                              </ul>
+                            <span class="title">Title</span>
+                            <p>First Line
+                                <br> Second Line
+                            </p>
+                            <a href="#!" class="secondary-content">
+                                <i class="material-icons">grade</i>
+                            </a>
+                        </li>
+                        <li class="collection-item avatar">
+                            <i class="material-icons circle green">insert_chart</i>
+                            <span class="title">Title</span>
+                            <p>First Line
+                                <br> Second Line
+                            </p>
+                            <a href="#!" class="secondary-content">
+                                <i class="material-icons">grade</i>
+                            </a>
+                        </li>
+                        <li class="collection-item avatar">
+                            <i class="material-icons circle red">play_arrow</i>
+                            <span class="title">Title</span>
+                            <p>First Line
+                                <br> Second Line
+                            </p>
+                            <a href="#!" class="secondary-content">
+                                <i class="material-icons">grade</i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class = "col s10">
+                <div class="col s10">
                     <div class="card #fafafa grey lighten-5" id="snippetholder">
-                        <div class="card-content" id="snippet" >
-                        
-                    </div>
-                                </div>
-                            </div>
-                        
-                        </div>
-              </div>
-        <div id="tab2" class="col s12">
+                        <div class="card-content" id="snippet">
 
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="searchpage" class="col s12">
+            <div class = "row">
+            <div class="input-field col s12">
+                <input id="searchInput" type="search" class="validate">
+                        <label for="searchInput">Search</label>
+                </div>
+            </div>
+
+            <div class= "row">
+                    <div class="row">
+                            <div class="col s12 m6">
+                              <div class="card #1a237e indigo darken-4">
+                                <div class="card-content white-text">
+                                <div class="card-action">
+                                  <a href="#">This is a link</a>
+                                  <a href="#">This is a link</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+            </div>
+        
         </div>
         <div id="tab3" class="col s12"></div>
         <div id="tab4" class="col s12"></div>
-    
+
     </div>
-        <!-- Page Content goes here -->
-     
-        
+    <!-- Page Content goes here -->
 
-      
 
-       
-    
-    <!-- JS -->
+
+
+
+
+
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
+    <!-- Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="assets/design/style.js"></script>
+
+    <!-- CodeMirror -->
+    <script src="assets/codeEditor/mode/javascript/javascript.js"></script>
     <script>
-            var myCodeMirror = CodeMirror(document.getElementById("snippetholder"), {
+        var myCodeMirror = CodeMirror(document.getElementById("snippetholder"), {
             value: "",
-            mode:  "javascript",
+            mode: "javascript",
             theme: "tomorrow-night-bright",
             lineNumbers: true,
-        });  
-</script>
+        });
+    </script>
+    <!-- GistSearch -->
+    <script src="assets/gistSearch/gistSearch.js"></script>
 
 </body>
 
