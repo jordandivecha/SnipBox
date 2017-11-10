@@ -48,17 +48,17 @@
                   </ul> -->
         </div>
         <div class="nav-center">
-            <ul class="tabs tabs-transparent">
-                <li class="tab">
-                    <a href="#snippet">Editor</a>
+            <ul id="tabs-swipe-demo" class="tabs">
+                <li class="tab col s3">
+                    <a href="#snippetpage">Editor</a>
                 </li>
-                <li class="tab">
-                    <a href="#test2">Search</a>
+                <li class="tab col s3">
+                    <a href="#searchpage">Search</a>
                 </li>
-                <li class="tab">
+                <li class="tab col s3">
                     <a href="#tab3">Tab 3</a>
                 </li>
-                <li class="tab">
+                <li class="tab col s3">
                     <a href="#tab4">Tab 4</a>
                 </li>
             </ul>
@@ -66,7 +66,7 @@
     </nav>
 
     <!-- Content Container -->
-    <div class="container">
+    <!-- <div class="container"> -->
         <!-- Snippet Area -->
         <div id="snippetpage">
             <div class="row">
@@ -127,23 +127,29 @@
         </div>
         <div id="searchpage" class="col s12">
             <div class = "row">
-            <div class="input-field col s12">
+            <div class="input-field col s1"></div>
+            <div class="input-field col s5">
                 <input id="searchInput" type="search" class="validate">
-                        <label for="searchInput">Search</label>
+                <label for="searchInput">Search</label>
+                        
+                <button class="btn waves-effect waves-light" id= "submitSearch" type="submit" name="action">Submit
+                                <i class="material-icons right">send</i>
+                              </button>
+                        
                 </div>
+            <div class="input-field col s1"></div>
             </div>
 
             <div class= "row">
                     <div class="row">
-                            <div class="col s12 m6">
-                              <div class="card #1a237e indigo darken-4">
-                                <div class="card-content white-text">
-                                <div class="card-action">
+                            <div class="col s6 resultsHolder">
+                              
                                   
                                 </div>
                               </div>
                             </div>
                           </div>
+                    
             </div>
         
         </div>
