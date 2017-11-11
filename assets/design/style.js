@@ -1,6 +1,14 @@
 $(document).ready(function(){
-    $('ul.tabs').tabs().responsiveThreshold().swipeable(true);
- 
-$(".button-collapse").sideNav();
+//    $(".tabs").swipeable(true);
 
+
+
+$('.collapsible').collapsible();
+ // Open
+ $('.collapsible').collapsible('open', 0);
+ 
+   // Close
+   $('.collapsible').collapsible('close', 0);
+ 
+   // Destroy
 });

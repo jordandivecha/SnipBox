@@ -14,15 +14,15 @@ $("#submitSearch").on("click", function(){
       console.log(response);
 
       for(var i = 0; i < response.items.length; i++){
-        var newDiv = $("<div class='card medium #1a237e indigo darken-4 card-content white-text'>");
-        var newLink = $("<a>");
+        var newDiv = $("<div class='card  center-align left hoverable blue-grey darken-4 card-content white-text results'>");
+        var newLink = $("<a class ='light-blue-text'target='_blank'>");
         var link = response.items[i].html_url;
-        var newResultName = $("<p>")
+        var newResultName = $("<p class = 'flow-text' id='resultName'>")
         var resultName = response.items[i].name;
         console.log("Name: " + resultName + " Link: " + link);
-        newLink.attr("text", resultName).attr("href", link);
-        newResultName.attr("text", resultName);
-        newDiv.append(resultName);
+        newLink.append("Visit Repository").attr("href", link);
+        newResultName.append(resultName);
+        newDiv.append(newResultName);
         newDiv.append(newLink);
         $(".resultsHolder").append(newDiv);
       }

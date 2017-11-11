@@ -33,9 +33,9 @@
     <nav class="nav-extended col">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo center">SnipBox</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse">
+            <!-- <a href="#" data-activates="mobile-demo" class="button-collapse">
                 <i class="material-icons">menu</i>
-            </a>
+            </a> -->
             <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="sass.html">Sass</a></li>
                     <li><a href="badges.html">Components</a></li>
@@ -47,76 +47,64 @@
                     <li><a href="collapsible.html">JavaScript</a></li>
                   </ul> -->
         </div>
-        <div class="nav-center">
-            <ul id="tabs-swipe-demo" class="tabs">
-                <li class="tab col s3">
-                    <a href="#snippetpage">Editor</a>
+        <div class="nav-center z-depth-2">
+            <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width ">
+                <li class="tab col s3 teal-text text-accent-3">
+                    <a href="#snippetpage"class = "red-text text-accent-1">Editor</a>
                 </li>
                 <li class="tab col s3">
-                    <a href="#searchpage">Search</a>
+                    <a href="#searchpage"class = "red-text text-accent-1">Search</a>
+                </li>
+                <li class="tab col s3 ">
+                    <a href="#tab3"class = "red-text text-accent-1">Tab 3</a>
                 </li>
                 <li class="tab col s3">
-                    <a href="#tab3">Tab 3</a>
-                </li>
-                <li class="tab col s3">
-                    <a href="#tab4">Tab 4</a>
+                    <a href="#tab4" class = "red-text text-accent-1">Tab 4</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <!-- Content Container -->
-    <!-- <div class="container"> -->
+    <div class="container">
         <!-- Snippet Area -->
         <div id="snippetpage">
             <div class="row">
-                <div class="col s2">
-                    <ul class="collection right directories">
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle"></i>
-                            <span class="title">Title</span>
-                            <p>First Line
-                                <br> Second Line
-                            </p>
-                            <a href="#!" class="secondary-content">
-                                <i class="material-icons">grade</i>
-                            </a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">folder</i>
-                            <span class="title">Title</span>
-                            <p>First Line
-                                <br> Second Line
-                            </p>
-                            <a href="#!" class="secondary-content">
-                                <i class="material-icons">grade</i>
-                            </a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle green">insert_chart</i>
-                            <span class="title">Title</span>
-                            <p>First Line
-                                <br> Second Line
-                            </p>
-                            <a href="#!" class="secondary-content">
-                                <i class="material-icons">grade</i>
-                            </a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle red">play_arrow</i>
-                            <span class="title">Title</span>
-                            <p>First Line
-                                <br> Second Line
-                            </p>
-                            <a href="#!" class="secondary-content">
-                                <i class="material-icons">grade</i>
-                            </a>
-                        </li>
-                    </ul>
+                
+                <div class="col s4">
+                        <ul class="collapsible folderPanel" data-collapsible="expandable">
+                                <li>
+                                  <div class="collapsible-header grey lighten-3"><i class="material-icons">filter_drama</i>First</div>
+                                  <div class="collapsible-body black white-text ">
+                                        <i class="material-icons">folder_special</i>
+                                        <span class = "folderNames">This<br></span>
+                                        <i class="material-icons">folder_special</i>
+                                        <span class = "folderNames">This<br></span>
+                                        <i class="material-icons">folder_special</i>
+                                        <span class = "folderNames">That</span>
+                                </div>
+                                </li>
+                                <li>
+                                  <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                                  <div class="collapsible-body black white-text">
+            
+                                    <i class="material-icons">folder_special</i>
+                                    <span class = "folderNames">This<br></span>
+                                    <i class="material-icons">folder_special</i>
+                                    <span class = "folderNames">This<br></span>
+                                    <i class="material-icons">folder_special</i>
+                                    <span class = "folderNames">That</span>
+                            </div>
+                                </li>
+                                <li>
+                                  <div class="collapsible-header grey lighten-3"><i class="material-icons">whatshot</i>Third</div>
+                                  <div class="collapsible-body black white-text"><span class = "folderNames">Lorem ipsum dolor sit amet.</span></div>
+                                </li>
+                              </ul>
                 </div>
 
-                <div class="col s10">
-                    <div class="card #fafafa grey lighten-5" id="snippetholder">
+                <div class="col s8">
+                    <div class="card light-blue accent-1" id="snippetholder">
                         <div class="card-content" id="snippet">
 
                         </div>
@@ -125,30 +113,41 @@
 
             </div>
         </div>
+        
+<!--       SEARCH TAB  
+         -->
         <div id="searchpage" class="col s12">
             <div class = "row">
-            <div class="input-field col s1"></div>
-            <div class="input-field col s5">
-                <input id="searchInput" type="search" class="validate">
-                <label for="searchInput">Search</label>
+                <div class = "col s1"></div>
+                <div class="col s4">
+                    <p class ="white-text z-depth-3 flow-text searchinstructions">Search snippets of code to be linked to repositories.</p>
+                </div>
+                <div class = "col s6">
+                    <div class="card black" id="searchHolder">
+                    <div class="input-field">
+                        <input id="searchInput" type="search" >
+                        <label for="searchInput">Search Snippets</label>
                         
-                <button class="btn waves-effect waves-light" id= "submitSearch" type="submit" name="action">Submit
+                <button class="btn #00bfa5 teal accent-4 waves-light waves-effect left-align" id= "submitSearch" type="submit" name="action">Submit
                                 <i class="material-icons right">send</i>
                               </button>
                         
                 </div>
-            <div class="input-field col s1"></div>
+                </div>
+                </div>
+            <div class= "col s1"></div>
             </div>
 
             <div class= "row">
-                    <div class="row">
-                            <div class="col s6 resultsHolder">
-                              
+                    <div class= "col s1 xs1"></div>
+                    <div class="col s10 resultsHolder">
+                                    
                                   
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        </div>
+                     <div class= "col s1 xs1"></div>
+            </div>
+        </div>
+    </div>
                     
             </div>
         
