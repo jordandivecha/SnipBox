@@ -49,17 +49,17 @@
         </div>
         <div class="nav-center z-depth-2">
             <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width ">
-                <li class="tab col s3 teal-text text-accent-3">
-                    <a href="#snippetpage"class = "red-text text-accent-1">Editor</a>
+                <li class="tab col s3">
+                    <a href="#snippetpage" class="red-text text-accent-1">Editor</a>
                 </li>
                 <li class="tab col s3">
-                    <a href="#searchpage"class = "red-text text-accent-1">Search</a>
+                    <a href="#searchpage" class="red-text text-accent-1">Search</a>
                 </li>
                 <li class="tab col s3 ">
-                    <a href="#tab3"class = "red-text text-accent-1">Tab 3</a>
+                    <a href="#tab3" class="red-text text-accent-1">Tab 3</a>
                 </li>
                 <li class="tab col s3">
-                    <a href="#tab4" class = "red-text text-accent-1">Tab 4</a>
+                    <a href="#tab4" class="red-text text-accent-1">Tab 4</a>
                 </li>
             </ul>
         </div>
@@ -70,37 +70,50 @@
         <!-- Snippet Area -->
         <div id="snippetpage">
             <div class="row">
-                
+
                 <div class="col s4">
-                        <ul class="collapsible folderPanel" data-collapsible="expandable">
-                                <li>
-                                  <div class="collapsible-header grey lighten-3"><i class="material-icons">filter_drama</i>First</div>
-                                  <div class="collapsible-body black white-text ">
-                                        <i class="material-icons">folder_special</i>
-                                        <span class = "folderNames"> This<br></span>
-                                        <i class="material-icons">folder_special</i>
-                                        <span class = "folderNames"> This<br></span>
-                                        <i class="material-icons">folder_special</i>
-                                        <span class = "folderNames"> That</span>
-                                </div>
-                                </li>
-                                <li>
-                                  <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                                  <div class="collapsible-body black white-text">
-            
-                                    <i class="material-icons">folder_special</i>
-                                    <span class = "folderNames"> This<br></span>
-                                    <i class="material-icons">folder_special</i>
-                                    <span class = "folderNames"> This<br></span>
-                                    <i class="material-icons">folder_special</i>
-                                    <span class = "folderNames"> That</span>
+                    <ul class="collapsible folderPanel" data-collapsible="expandable">
+                        <li>
+                            <div class="collapsible-header grey lighten-3">
+                                <i class="material-icons">filter_drama</i>First</div>
+                            <div class="collapsible-body black white-text ">
+                                <i class="material-icons">folder_special</i>
+                                <span class="folderNames"> This
+                                    <br>
+                                </span>
+                                <i class="material-icons">folder_special</i>
+                                <span class="folderNames"> This
+                                    <br>
+                                </span>
+                                <i class="material-icons">folder_special</i>
+                                <span class="folderNames"> That</span>
                             </div>
-                                </li>
-                                <li>
-                                  <div class="collapsible-header grey lighten-3"><i class="material-icons">whatshot</i>Third</div>
-                                  <div class="collapsible-body black white-text"><span class = "folderNames">Lorem ipsum dolor sit amet.</span></div>
-                                </li>
-                              </ul>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                <i class="material-icons">place</i>Second</div>
+                            <div class="collapsible-body black white-text">
+
+                                <i class="material-icons">folder_special</i>
+                                <span class="folderNames"> This
+                                    <br>
+                                </span>
+                                <i class="material-icons">folder_special</i>
+                                <span class="folderNames"> This
+                                    <br>
+                                </span>
+                                <i class="material-icons">folder_special</i>
+                                <span class="folderNames"> That</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header grey lighten-3">
+                                <i class="material-icons">whatshot</i>Third</div>
+                            <div class="collapsible-body black white-text">
+                                <span class="folderNames">Lorem ipsum dolor sit amet.</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="col s8">
@@ -108,52 +121,59 @@
                         <div class="card-content" id="snippet">
 
                         </div>
+                        
                     </div>
+                    <!-- Slack Button -->
+                    <!-- <button class="btn transparent slackButton z-depth-0 left-align">
+                    <a class="slackbuttonlink z-depth-0 " href="https://slack.com/oauth/authorize?scope=incoming-webhook&client_id=51155901461.270850649189"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" 
+                    redirect_uri="https://identipop.github.io/SnipBox"/></a>
+                    </button> -->
+                    <div class="addthis_inline_share_toolbox"></div>
                 </div>
 
             </div>
         </div>
-        
-<!--       SEARCH TAB  
+
+        <!--       SEARCH TAB  
          -->
         <div id="searchpage" class="col s12">
-            <div class = "row">
-                <div class = "col s1"></div>
+            <div class="row">
+                <div class="col s1"></div>
                 <div class="col s4">
-                    <p class ="white-text z-depth-3 flow-text searchinstructions">Search snippets of code to be linked to repositories.</p>
+                    <p class="white-text z-depth-3 flow-text searchinstructions">Search snippets of code to be linked to repositories.</p>
                 </div>
-                <div class = "col s6">
+                <div class="col s6">
                     <div class="card black" id="searchHolder">
-                    <div class="input-field">
-                        <input id="searchInput" type="search" >
-                        <label for="searchInput">Search Snippets</label>
-                        
-                <button class="btn #00bfa5 teal accent-4 waves-light waves-effect left-align" id= "submitSearch" type="submit" name="action">Submit
+                        <div class="input-field">
+                            <input id="searchInput" type="search">
+                            <label for="searchInput">Search Snippets</label>
+
+                            <button class="btn #00bfa5 teal accent-4 waves-light waves-effect left-align" id="submitSearch" type="submit" name="action">Submit
                                 <i class="material-icons right">send</i>
-                              </button>
-                        
+                            </button>
+
+                        </div>
+                    </div>
                 </div>
-                </div>
-                </div>
-            <div class= "col s1"></div>
+                <div class="col s1"></div>
             </div>
 
-            <div class= "row">
-                    <div class= "col s1 xs1"></div>
-                    <div class="col s10 resultsHolder">
-                                    
-                                  
-                        </div>
-                     <div class= "col s1 xs1"></div>
+            <div class="row">
+                <div class="col s1 xs1"></div>
+                <div class="col s10 resultsHolder">
+
+
+                </div>
+                <div class="col s1 xs1"></div>
             </div>
         </div>
     </div>
-                    
-            </div>
-        
-        </div>
-        <div id="tab3" class="col s12"></div>
-        <div id="tab4" class="col s12"></div>
+
+    </div>
+
+    </div>
+    <div id="tab3" class="col s12"></div>
+    <div id="tab4" class="col s12"></div>
 
     </div>
     <!-- Page Content goes here -->
@@ -167,6 +187,7 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
+        
     <!-- Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="assets/design/style.js"></script>
@@ -183,6 +204,7 @@
     </script>
     <!-- GistSearch -->
     <script src="assets/gistSearch/gistSearch.js"></script>
+    <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a07bb7cf83c1384"></script> 
 
 </body>
 
