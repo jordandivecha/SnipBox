@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+    
 .tabs{
     margin: auto;
     width: 80%;
@@ -8,6 +18,8 @@
     
 
 }
+
+
 .slackButton{
     width: 139px;
 }
@@ -17,7 +29,8 @@
 
 .nav-wrapper{
     background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255) !important;
+   
+    height: 100px !important;
     
 
 
@@ -33,11 +46,12 @@
 
 
 body{
+   
     background-color: black;
-    background-image: url(http://cdn.pcwallart.com/images/aurora-boreal-wallpaper-2.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position-y:0;
+    background-image: url(https://cdn.pcwallart.com/images/aurora-boreal-wallpaper-2.jpg);
+    background-size: cover;
+    
+    
     
 }
 
@@ -47,7 +61,7 @@ body{
 }
 
 .card{
-    padding: 5px;
+    padding: 2px;
     margin-right: 10px;
 }
 
@@ -59,8 +73,13 @@ body{
     padding: 0px;
 }
 
+#submitSearch{
+    margin: 0 auto !important;
+}
 
-
+.searchinstructions{
+    border: 2px 1px red;
+}
 .container{
     width: 95%;
 }
@@ -117,4 +136,18 @@ span{
       margin-top: 50px;
   }
 
+.footerrow{
+    height: 80px !important;
+    margin-bottom: 10px
+  }
   
+  .page-footer{
+      height: 150px;
+  }
+  footer{
+      background-color: black;
+  }
+  .logo{
+      margin: 0 auto !important;
+      margin-left: 5px !important;
+  }
