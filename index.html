@@ -28,11 +28,11 @@
 </head>
 
 <body>
-
+<header>
     <!-- Navbar -->
     <nav class="nav-extended col">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">SnipBox</a>
+        <div class="nav-wrapper center-align">
+            <img class= "logo " src="assets/design/logo.png"height= "100px"></a>
             <!-- <a href="#" data-activates="mobile-demo" class="button-collapse">
                 <i class="material-icons">menu</i>
             </a> -->
@@ -50,21 +50,22 @@
         <div class="nav-center z-depth-2">
             <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width ">
                 <li class="tab col s3">
-                    <a href="#snippetpage" class="red-text text-accent-1">Editor</a>
+                    <a href="#snippetpage" class="teal-text text-accent-1">Editor</a>
                 </li>
                 <li class="tab col s3">
-                    <a href="#searchpage" class="red-text text-accent-1">Search</a>
+                    <a href="#searchpage" class="light-blue-text text-accent-1">Search</a>
                 </li>
                 <li class="tab col s3 ">
-                    <a href="#tab3" class="red-text text-accent-1">Tab 3</a>
+                    <a href="#tab3" class="teal-text text-accent-1">Tab 3</a>
                 </li>
                 <li class="tab col s3">
-                    <a href="#tab4" class="red-text text-accent-1">Tab 4</a>
+                    <a href="#tab4" class="teal-text text-accent-1">Tab 4</a>
                 </li>
             </ul>
         </div>
     </nav>
-
+</header>
+<main>
     <!-- Content Container -->
     <div class="container">
         <!-- Snippet Area -->
@@ -74,7 +75,7 @@
                 <div class="col s4">
                     <ul class="collapsible folderPanel" data-collapsible="expandable">
                         <li>
-                            <div class="collapsible-header grey lighten-3">
+                            <div class="collapsible-header black white-text">
                                 <i class="material-icons">filter_drama</i>First</div>
                             <div class="collapsible-body black white-text ">
                                 <i class="material-icons">folder_special</i>
@@ -90,7 +91,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header">
+                            <div class="collapsible-header #263238 blue-grey darken-4 white-text">
                                 <i class="material-icons">place</i>Second</div>
                             <div class="collapsible-body black white-text">
 
@@ -107,7 +108,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header grey lighten-3">
+                            <div class="collapsible-header black white-text">
                                 <i class="material-icons">whatshot</i>Third</div>
                             <div class="collapsible-body black white-text">
                                 <span class="folderNames">Lorem ipsum dolor sit amet.</span>
@@ -117,7 +118,7 @@
                 </div>
 
                 <div class="col s8">
-                    <div class="card light-blue accent-1" id="snippetholder">
+                    <div class="card red accent-1" id="snippetholder">
                         <div class="card-content" id="snippet">
 
                         </div>
@@ -128,7 +129,7 @@
                     <a class="slackbuttonlink z-depth-0 " href="https://slack.com/oauth/authorize?scope=incoming-webhook&client_id=51155901461.270850649189"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" 
                     redirect_uri="https://identipop.github.io/SnipBox"/></a>
                     </button> -->
-                    <div class="addthis_inline_share_toolbox"></div>
+                    
                 </div>
 
             </div>
@@ -148,7 +149,7 @@
                             <input id="searchInput" type="search">
                             <label for="searchInput">Search Snippets</label>
 
-                            <button class="btn #00bfa5 teal accent-4 waves-light waves-effect left-align" id="submitSearch" type="submit" name="action">Submit
+                            <button class="btn #00bfa5 teal accent-4 waves-light waves-effect" id="submitSearch" type="submit" name="action">Submit
                                 <i class="material-icons right">send</i>
                             </button>
 
@@ -168,16 +169,40 @@
             </div>
         </div>
     </div>
-
+    
+        </div>
+        <div id="tab3" class="col s12"></div>
+        <div id="tab4" class="col s12"></div>
+    
+        </div>
     </div>
 
-    </div>
-    <div id="tab3" class="col s12"></div>
-    <div id="tab4" class="col s12"></div>
+    
+</main>
 
-    </div>
-    <!-- Page Content goes here -->
 
+<footer>
+    <footer class="page-footer black">
+        <div class="container black">
+          <div class="row footerrow black">
+            <div class="col s2"></div>
+        
+            
+            <div class="col m8 s12 center-align footerholder black">
+                <h5 class="white-text center-align">How do you use SnipBox?</h5>
+                <p class="white-text  center-align"> Write code above + save to a folder + share. </p>
+            </div>
+            <div class="col s2"></div>
+          </div>
+        </div>
+        <div class="footer-copyright center-align white-text light-blue darken-4">
+          <div class="container ">
+          © 2017 SnipBox
+          
+          </div>
+        </div>
+      </footer>
+    </footer>
 
 
 
@@ -204,7 +229,7 @@
     </script>
     <!-- GistSearch -->
     <script src="assets/gistSearch/gistSearch.js"></script>
-    <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a07bb7cf83c1384"></script> 
+   
 
 </body>
 
