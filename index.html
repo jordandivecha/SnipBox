@@ -23,17 +23,19 @@
     <link rel="stylesheet" href="assets/codeEditor/css/style.css">
 
     <link rel="stylesheet" href="assets/codeEditor/themes/tomorrow-night-bright.css">
-
+    <!-- <script src= "login.js"></script> -->
     <title>SnipBox</title>
 </head>
 
 <body>
+   
 <header>
     <!-- Navbar -->
     <nav class="nav-extended col">
         <div class="nav-wrapper center-align">
+            <!-- <h5 class = "white-text left" id="username"></h5> -->
             <img class= "logo " src="assets/design/Logo.png"height= "100px"></a>
-            <a class="btn-floating  waves-effect waves-light red logout tooltipped"data-position="bottom" data-delay="50" data-tooltip="Logout"><i class="material-icons v-align logouticon">exit_to_app</i></a>
+            <a class="btn-floating  waves-effect waves-light red tooltipped logout" data-position="bottom" data-delay="50" data-tooltip="Logout"><i class="material-icons v-align logouticon">exit_to_app</i></a>
             <!-- <a href="#" data-activates="mobile-demo" class="button-collapse">
                 <i class="material-icons">menu</i>
             </a> -->
@@ -78,18 +80,18 @@
                     <ul class="collapsible folderPanel" data-collapsible="expandable">
                         <li>
                             <div class="collapsible-header black white-text">
-                                <i class="material-icons">filter_drama</i>User</div>
+                                <i class="material-icons">filter_drama</i><span class="username"><bold>User</bold></span></div>
                             <div class="collapsible-body black white-text ">
                                 <i class="material-icons">folder_special</i>
                                 <span class="folderNames"> Javascript
                                     <br>
                                 </span>
                                 <i class="material-icons">folder_special</i>
-                                <span class="folderNames"> This
+                                <span class="folderNames"> HTML
                                     <br>
                                 </span>
                                 <i class="material-icons">folder_special</i>
-                                <span class="folderNames"> That</span>
+                                <span class="folderNames"> CSS </span>
                             </div>
                         </li>
                         <!-- <li>
@@ -243,6 +245,10 @@
     </script>
     <!-- GistSearch -->
     <script src="assets/gistSearch/gistSearch.js"></script>
+
+    <!-- User Info -->
+    <script src = "assets/app.js"></script>
+
    
 
 </body>

@@ -11,7 +11,6 @@
 
     firebase.auth().getRedirectResult().then(function(result) {
       if (result){
-        console.log(result.user["uid"],result.user["displayName"],result.user["email"])
         writeUserData(result.user["uid"],result.user["displayName"],result.user["email"])
       }
 
@@ -28,24 +27,20 @@
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         var providerData = user.providerData;
-        $(document.body).append("Hi " + displayName + "</br>")
+        window.location.replace("/index.html");
        // $(document.body).append("UID: " + uid)
-        console.log(uid)
+        
         // ...
       } else {
         // User is signed out.
-        $(document.body).append("Not logged in.")
+        // $(document.body).append("Not logged in.")
         
 
       }
     });
-    function logOut(){
-      firebase.auth().signOut().then(function() {
-        console.log("Log out succesfully")
-      }, function(error) {
-        console.log(error)
-      });
-    }
+    $(".login").click(function(){
+      logIn();
+    })
     function logIn(){
       firebase.auth().signInWithRedirect(provider); 
     }
