@@ -27,6 +27,8 @@
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         var providerData = user.providerData;
+        localStorage.setItem("uid", uid);
+        localStorage.setItem("displayName", displayName);
         window.location.replace("/index.html");
        // $(document.body).append("UID: " + uid)
         
@@ -50,3 +52,4 @@
         email: email,
       });
     }
+    

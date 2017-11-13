@@ -38,8 +38,24 @@ firebase.initializeApp(config);
     })
     function logOut(){
         firebase.auth().signOut().then(function() {
-          console.log("Log out succesfully")
+          localStorage.clear();
         }, function(error) {
           console.log(error)
         });
       }
+
+      function saveSnippet() {
+        var filename = window.btoa($("#fileName").val());
+        var code = myCodeMirror.getValue();
+        var userId = localStorage.getItem("uid");
+        code = window.btoa(code)
+        var obj = {};
+        obj["content"] = code;
+        firebase.database().ref('users/' + userId + '/snippets/javascript/' + filename).set(obj);
+      }
+
+    $(".savebutton").click(function(){
+        saveSnippet();
+    })
+
+    
