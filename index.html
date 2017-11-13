@@ -33,6 +33,7 @@
     <nav class="nav-extended col">
         <div class="nav-wrapper center-align">
             <img class= "logo " src="assets/design/Logo.png"height= "100px"></a>
+            <a class="btn-floating  waves-effect waves-light red logout tooltipped"data-position="bottom" data-delay="50" data-tooltip="Logout"><i class="material-icons v-align logouticon">exit_to_app</i></a>
             <!-- <a href="#" data-activates="mobile-demo" class="button-collapse">
                 <i class="material-icons">menu</i>
             </a> -->
@@ -47,13 +48,14 @@
                     <li><a href="collapsible.html">JavaScript</a></li>
                   </ul> -->
         </div>
+        
         <div class="nav-center z-depth-2">
             <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width ">
                 <li class="tab col s3">
                     <a href="#snippetpage" class="teal-text text-accent-1">Editor</a>
                 </li>
                 <li class="tab col s3">
-                    <a href="#searchpage" class="light-blue-text text-accent-1">Search</a>
+                    <a href="#discoverpage" class="light-blue-text text-accent-1">Discover</a>
                 </li>
                 <li class="tab col s3 ">
                     <a href="#tab3" class="teal-text text-accent-1">Tab 3</a>
@@ -76,10 +78,10 @@
                     <ul class="collapsible folderPanel" data-collapsible="expandable">
                         <li>
                             <div class="collapsible-header black white-text">
-                                <i class="material-icons">filter_drama</i>First</div>
+                                <i class="material-icons">filter_drama</i>User</div>
                             <div class="collapsible-body black white-text ">
                                 <i class="material-icons">folder_special</i>
-                                <span class="folderNames"> This
+                                <span class="folderNames"> Javascript
                                     <br>
                                 </span>
                                 <i class="material-icons">folder_special</i>
@@ -90,7 +92,7 @@
                                 <span class="folderNames"> That</span>
                             </div>
                         </li>
-                        <li>
+                        <!-- <li>
                             <div class="collapsible-header #263238 blue-grey darken-4 white-text">
                                 <i class="material-icons">place</i>Second</div>
                             <div class="collapsible-body black white-text">
@@ -108,20 +110,23 @@
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header black white-text">
+                            <div class="collapsible-header black white-text disabled">
                                 <i class="material-icons">whatshot</i>Third</div>
                             <div class="collapsible-body black white-text">
                                 <span class="folderNames">Lorem ipsum dolor sit amet.</span>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
+           
 
                 <div class="col s8">
-                    <div class="card red accent-1" id="snippetholder">
+                    <div class="card light-blue accent-1" id="snippetholder">
                         <div class="card-content" id="snippet">
-
+                        
+                            
                         </div>
+                        
                         
                     </div>
                     <!-- Slack Button -->
@@ -129,7 +134,17 @@
                     <a class="slackbuttonlink z-depth-0 " href="https://slack.com/oauth/authorize?scope=incoming-webhook&client_id=51155901461.270850649189"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" 
                     redirect_uri="https://identipop.github.io/SnipBox"/></a>
                     </button> -->
-                    
+                    <div class="fixed-action-btn horizontal click-to-toggle copysharetools">
+                        <a class="btn-floating btn-large red">
+                          <i class="material-icons">menu</i>
+                        </a>
+                        <ul>
+                          <li><a class="btn-floating tooltipped red copybutton" data-position="bottom" data-delay="50" data-tooltip="Copy"><i class="material-icons">content_copy</i></a></li>
+                          <li><a class="btn-floating tooltipped yellow darken-1 savebutton" data-position="bottom" data-delay="50" data-tooltip="Save"><i class="material-icons">save</i></a></li>
+                          <li><a class="btn-floating tooltipped green publishbutton" data-position="bottom" data-delay="50" data-tooltip="Publish"><i class="material-icons">publish</i></a></li>
+                          <li><a class="btn-floating tooltipped blue beautifybutton" data-position="bottom" data-delay="50" data-tooltip="Beautify"><i class="material-icons">photo_filter</i></a></li>
+                        </ul>
+                      </div>
                 </div>
 
             </div>
@@ -137,17 +152,17 @@
 
         <!--       SEARCH TAB  
          -->
-        <div id="searchpage" class="col s12">
+        <div id="discoverpage" class="col s12">
             <div class="row">
                 <div class="col s1"></div>
                 <div class="col s4">
-                    <p class="white-text z-depth-3 flow-text searchinstructions">Search snippets of code to be linked to repositories.</p>
+                    <p class="white-text z-depth-3 flow-text searchinstructions">Search repositories for inspiration.</p>
                 </div>
                 <div class="col s6">
                     <div class="card black" id="searchHolder">
                         <div class="input-field">
                             <input id="searchInput" type="search">
-                            <label for="searchInput">Search Snippets</label>
+                            <label for="searchInput">Search Gists</label>
 
                             <button class="btn #00bfa5 teal accent-4 waves-light waves-effect" id="submitSearch" type="submit" name="action">Submit
                                 <i class="material-icons right">send</i>
