@@ -67,6 +67,7 @@ body{
 
 #snippetholder {
     margin-top: 25px;
+    position: relative;
 }
 
 #snippet{
@@ -150,4 +151,23 @@ span{
   .logo{
       margin: 0 auto !important;
       margin-left: 5px !important;
+  }
+
+  .copysharetools {
+      position: relative;
+      float: right;
+      clear: left;
+  }
+
+  .logout{
+      position: absolute;
+      top: 25px;
+      right: 50px;
+      
+
+  }
+
+  .logouticon{
+      position: absolute;
+      top: -10px;
   }
