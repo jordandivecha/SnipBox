@@ -8,242 +8,132 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    
+     <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> 
+  
 
-    <!-- Materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- CSS Stylesheet -->
+    <!-- Stylesheet -->
 
     <link rel="stylesheet" type="text/css" href="assets/design/style.css">
 
-    <!-- CodeMirror Style -->
     <script src="assets/codeEditor/js/codemirror.js"></script>
     <link rel="stylesheet" href="assets/codeEditor/css/codemirror.css">
     <link rel="stylesheet" href="assets/codeEditor/css/style.css">
-
+    <script src="assets/codeEditor/mode/javascript/javascript.js"></script>
     <link rel="stylesheet" href="assets/codeEditor/themes/tomorrow-night-bright.css">
 
     <title>SnipBox</title>
 </head>
 
 <body>
-<header>
+    
     <!-- Navbar -->
-    <nav class="nav-extended col">
-        <div class="nav-wrapper center-align">
-            <img class= "logo " src="assets/design/Logo.png"height= "100px"></a>
-            <a class="btn-floating  waves-effect waves-light red logout tooltipped"data-position="bottom" data-delay="50" data-tooltip="Logout"><i class="material-icons v-align logouticon">exit_to_app</i></a>
-            <!-- <a href="#" data-activates="mobile-demo" class="button-collapse">
-                <i class="material-icons">menu</i>
-            </a> -->
-            <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <nav class="nav-extended col">
+                <div class="nav-wrapper">
+                  <a href="#" class="brand-logo center">SnipBox</a>
+                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                  <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="sass.html">Sass</a></li>
                     <li><a href="badges.html">Components</a></li>
                     <li><a href="collapsible.html">JavaScript</a></li>
                   </ul> -->
-            <!-- <ul class="side-nav" id="mobile-demo">
+                  <!-- <ul class="side-nav" id="mobile-demo">
                     <li><a href="sass.html">Sass</a></li>
                     <li><a href="badges.html">Components</a></li>
                     <li><a href="collapsible.html">JavaScript</a></li>
                   </ul> -->
-        </div>
-        
-        <div class="nav-center z-depth-2">
-            <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width ">
-                <li class="tab col s3">
-                    <a href="#snippetpage" class="teal-text text-accent-1">Editor</a>
-                </li>
-                <li class="tab col s3">
-                    <a href="#discoverpage" class="light-blue-text text-accent-1">Discover</a>
-                </li>
-                <li class="tab col s3 ">
-                    <a href="#tab3" class="teal-text text-accent-1">Tab 3</a>
-                </li>
-                <li class="tab col s3">
-                    <a href="#tab4" class="teal-text text-accent-1">Tab 4</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
-<main>
+                </div>
+                <div class="nav-center">
+                  <ul class="tabs tabs-transparent">
+                    <li class="tab"><a href="#snippet">Snippet Editor</a></li>
+                    <li class="tab"><a href="#test2">Tab 2</a></li>
+                    <li class="tab"><a href="#tab3">Tab 3</a></li>
+                    <li class="tab"><a href="#tab4">Tab 4</a></li>
+                  </ul>
+                </div>
+              </nav>
+    
     <!-- Content Container -->
     <div class="container">
         <!-- Snippet Area -->
         <div id="snippetpage">
-            <div class="row">
-
-                <div class="col s4">
-                    <ul class="collapsible folderPanel" data-collapsible="expandable">
-                        <li>
-                            <div class="collapsible-header black white-text">
-                                <i class="material-icons">filter_drama</i>User</div>
-                            <div class="collapsible-body black white-text ">
-                                <i class="material-icons">folder_special</i>
-                                <span class="folderNames"> Javascript
-                                    <br>
-                                </span>
-                                <i class="material-icons">folder_special</i>
-                                <span class="folderNames"> This
-                                    <br>
-                                </span>
-                                <i class="material-icons">folder_special</i>
-                                <span class="folderNames"> That</span>
-                            </div>
-                        </li>
-                        <!-- <li>
-                            <div class="collapsible-header #263238 blue-grey darken-4 white-text">
-                                <i class="material-icons">place</i>Second</div>
-                            <div class="collapsible-body black white-text">
-                                <i class="material-icons">folder_special</i>
-                                <span class="folderNames"> This
-                                    <br>
-                                </span>
-                                <i class="material-icons">folder_special</i>
-                                <span class="folderNames"> This
-                                    <br>
-                                </span>
-                                <i class="material-icons">folder_special</i>
-                                <span class="folderNames"> That</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header black white-text disabled">
-                                <i class="material-icons">whatshot</i>Third</div>
-                            <div class="collapsible-body black white-text">
-                                <span class="folderNames">Lorem ipsum dolor sit amet.</span>
-                            </div>
-                        </li> -->
-                    </ul>
+            <div class = "row">
+                <div class = "col s2">
+                    <ul class="collection right directories">
+                        <li class="collection-item avatar">
+                            <i class="material-icons circle">folder</i>
+                                <span class="title">Title</span>
+                                <p>First Line <br>
+                                     Second Line
+                                  </p>
+                                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                                </li>
+                                <li class="collection-item avatar">
+                                  <i class="material-icons circle">folder</i>
+                                  <span class="title">Title</span>
+                                  <p>First Line <br>
+                                     Second Line
+                                  </p>
+                                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                                </li>
+                                <li class="collection-item avatar">
+                                  <i class="material-icons circle green">insert_chart</i>
+                                  <span class="title">Title</span>
+                                  <p>First Line <br>
+                                     Second Line
+                                  </p>
+                                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                                </li>
+                                <li class="collection-item avatar">
+                                  <i class="material-icons circle red">play_arrow</i>
+                                  <span class="title">Title</span>
+                                  <p>First Line <br>
+                                     Second Line
+                                  </p>
+                                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                                </li>
+                              </ul>
                 </div>
-           
 
-                <div class="col s8">
-                    <div class="card light-blue accent-1" id="snippetholder">
-                        <div class="card-content" id="snippet">
-                        
-                            
-                        </div>
-                        
+                <div class = "col s10">
+                    <div class="card #fafafa grey lighten-5" id="snippetholder">
+                        <div class="card-content" id="snippet" >
                         
                     </div>
-                    <!-- Slack Button -->
-                    <!-- <button class="btn transparent slackButton z-depth-0 left-align">
-                    <a class="slackbuttonlink z-depth-0 " href="https://slack.com/oauth/authorize?scope=incoming-webhook&client_id=51155901461.270850649189"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" 
-                    redirect_uri="https://identipop.github.io/SnipBox"/></a>
-                    </button> -->
-                    <div class="fixed-action-btn horizontal click-to-toggle copysharetools">
-                        <a class="btn-floating btn-large red">
-                          <i class="material-icons">menu</i>
-                        </a>
-                        <ul>
-                          <li><a class="btn-floating tooltipped red copybutton" data-position="bottom" data-delay="50" data-tooltip="Copy"><i class="material-icons">content_copy</i></a></li>
-                          <li><a class="btn-floating tooltipped yellow darken-1 savebutton" data-position="bottom" data-delay="50" data-tooltip="Save"><i class="material-icons">save</i></a></li>
-                          <li><a class="btn-floating tooltipped green publishbutton" data-position="bottom" data-delay="50" data-tooltip="Publish"><i class="material-icons">publish</i></a></li>
-                          <li><a class="btn-floating tooltipped blue beautifybutton" data-position="bottom" data-delay="50" data-tooltip="Beautify"><i class="material-icons">photo_filter</i></a></li>
-                        </ul>
-                      </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!--       SEARCH TAB  
-         -->
-        <div id="discoverpage" class="col s12">
-            <div class="row">
-                <div class="col s1"></div>
-                <div class="col s4">
-                    <p class="white-text z-depth-3 flow-text searchinstructions">Search repositories for inspiration.</p>
-                </div>
-                <div class="col s6">
-                    <div class="card black" id="searchHolder">
-                        <div class="input-field">
-                            <input id="searchInput" type="search">
-                            <label for="searchInput">Search Gists</label>
-
-                            <button class="btn #00bfa5 teal accent-4 waves-light waves-effect" id="submitSearch" type="submit" name="action">Submit
-                                <i class="material-icons right">send</i>
-                            </button>
-
+                                </div>
+                            </div>
+                        
                         </div>
-                    </div>
-                </div>
-                <div class="col s1"></div>
-            </div>
+              </div>
+        <div id="tab2" class="col s12">
 
-            <div class="row">
-                <div class="col s1 xs1"></div>
-                <div class="col s10 resultsHolder">
-
-
-                </div>
-                <div class="col s1 xs1"></div>
-            </div>
-        </div>
-    </div>
-    
         </div>
         <div id="tab3" class="col s12"></div>
         <div id="tab4" class="col s12"></div>
     
-        </div>
     </div>
+        <!-- Page Content goes here -->
+     
+        
 
+      
+
+       
     
-</main>
-
-
-<footer>
-    <footer class="page-footer black">
-        <div class="container black">
-          <div class="row footerrow black">
-            <div class="col s2"></div>
-        
-            
-            <div class="col m8 s12 center-align footerholder black">
-                <h5 class="white-text center-align">How do you use SnipBox?</h5>
-                <p class="white-text  center-align"> Write code above + save to a folder + share. </p>
-            </div>
-            <div class="col s2"></div>
-          </div>
-        </div>
-        <div class="footer-copyright center-align white-text light-blue darken-4">
-          <div class="container ">
-          © 2017 SnipBox
-          
-          </div>
-        </div>
-      </footer>
-    </footer>
-
-
-
-
-
-
-    <!-- JQuery -->
+    <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-        
-    <!-- Materialize -->
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="assets/design/style.js"></script>
-
-    <!-- CodeMirror -->
-    <script src="assets/codeEditor/mode/javascript/javascript.js"></script>
     <script>
-        var myCodeMirror = CodeMirror(document.getElementById("snippetholder"), {
+            var myCodeMirror = CodeMirror(document.getElementById("snippetholder"), {
             value: "",
-            mode: "javascript",
+            mode:  "javascript",
             theme: "tomorrow-night-bright",
             lineNumbers: true,
-        });
-    </script>
-    <!-- GistSearch -->
-    <script src="assets/gistSearch/gistSearch.js"></script>
-   
+        });  
+</script>
 
 </body>
 
