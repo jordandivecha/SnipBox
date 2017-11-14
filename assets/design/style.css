@@ -198,7 +198,9 @@ margin-bottom: 2px;
   }
 
   .loginholder{
-    opacity: 0.7;
+    /* opacity: 0.7; */
+    margin-top: 125px;
+    background-color: rgba(255, 255, 255, 0.678) !important;
   }
 
   .login{
@@ -220,4 +222,8 @@ margin-bottom: 2px;
   .pfooter{
       text-align: center;
       width: 100%;
+  }
+
+  .octocat{
+      opacity: unset;
   }
