@@ -98,12 +98,14 @@ firebase.initializeApp(config);
     // PULL IN SUBFOLDERS
     $(document).on("click", ".subFolder", function(){
       var folderName = window.btoa($(this).text())
+      console.log($(this).text());
       return firebase.database().ref('/users/' + userId + "/snippets/javascript").once('value').then(function(snapshot) {
         var info = snapshot.val()
         var content = window.atob(info[folderName].content)
         console.log(content)
         myCodeMirror.setValue(content)
         $("#fileName").val(window.atob(folderName))
+        $("#fileName").focus();
         // ...
       });
     })
@@ -130,19 +132,106 @@ firebase.initializeApp(config);
     // ====================================================
     //               Published Snippet Feed
     // ====================================================
-    var decodedFromFeed; //global to access through event listener and on click
+  //   var decodedFromFeed; //global to access through event listener and on click
     
-    firebase.database().ref("/published").on("value", function(snapshot) {
-      var anchor = $("<a>");
-      var feedName = snapshot.child("published").key(); //this may not access key correctly
-      decodedFromFeed = window.atob(snapshot.child("published/" + feedName).val()); //should save decoded content of the key
-      anchor.attr("text", feedName).addClass("feedButton");
-      $(".publishfeed").prepend(anchor); //Add new anchor to the feed
+  //   firebase.database().ref("/published").on("value", function(snapshot) {
+  //     var anchor = $("<a>");
+  //     var feedName = snapshot.child("published").key(); //this may not access key correctly
+  //     decodedFromFeed = window.atob(snapshot.child("published/" + feedName).val()); //should save decoded content of the key
+  //     anchor.attr("text", feedName).addClass("feedButton");
+  //     $(".publishfeed").prepend(anchor); //Add new anchor to the feed
   
-    },function(errorObject) {
-    console.log("The read failed: " + errorObject.code);
+  //   },function(errorObject) {
+  //   console.log("The read failed: " + errorObject.code);
+  // });
+  //   $(document).on("click", ".publishFeed", function(){
+  //   var feedName = $(this).text();
+  //   myCodeMirror.setValue(decodedFromFeed);
+  // });
+
+  function deleteSnippet(){
+    firebase.database().ref('/users/' + userId + "/snippets/javascript/" + window.btoa($("#fileName").val())).remove();
+    myCodeMirror.setValue("");
+    $("#fileName").val("");
+  }
+  function newSnippet(){
+    myCodeMirror.setValue("");
+    $("#fileName").val("");
+  }
+  $(".clearbutton").click(deleteSnippet);
+  $(".createbutton").click(newSnippet);
+
+  // 
+ 
+
+
+
+  // ====================================================
+     //               Published Button
+     // ====================================================
+     function publishSnippet() {
+      code = window.btoa(code)
+      
+      
+
+
+    var filename = window.btoa($("#fileName").val());
+    
+    // if(filename === "") {
+    //   alert("Please name your snippet!");  
+    //   break;
+    // };
+
+    var code = window.btoa(myCodeMirror.getValue());
+    var obj = {};
+    obj["content"] = code;
+    firebase.database().ref('published/javascript/' + filename).set(obj);
+    console.log("Your code should be published.  Check Firebase.");
+  }
+  $(".publishbutton").click(function(){
+    publishSnippet();
   });
-    $(document).on("click", ".publishFeed", function(){
-    var feedName = $(this).text();
-    myCodeMirror.setValue(decodedFromFeed);
+  // ====================================================
+  //               Published Snippet Feed
+  // ====================================================
+  var decodedFromFeed; //global to access through event listener and on click
+  
+  firebase.database().ref("published/javascript").on("value", function(snapshot) {
+    var result = (snapshot.val());
+    for (var i in result){
+      var fileName = window.atob(i);
+      var code = window.atob(result[i].content);
+      console.log(fileName, code);
+      
+     // var displayCode = myCodeMirror.setValue(code);
+     publishLibrary(fileName, code);
+    }
+
+  },function(errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
+
+function publishLibrary (fileName, code){
+  var libraryItem = $("<div class= 'card  center-align left hoverable blue-grey darken-4 card-content white-text publishFeed'>");
+  libraryItem.text(fileName);
+  $(".libraryfeed").prepend(libraryItem);
+}
+  $(document).on("click", ".publishFeed", function(){
+  var feedName = $(this).text();
+  $('ul.tabs').tabs('select_tab', 'snippetpage');
+  var code = ""; 
+  firebase.database().ref("published/javascript/" + window.btoa(feedName)).once('value').then(function(snapshot) {
+    code = window.atob(snapshot.val()["content"])
+   // console.log(code)
+    myCodeMirror.setValue(code);
+  $("#fileName").val(feedName);
+  $("#fileName").focus();
   });
+
+  console.log(code)
+ // myCodeMirror.setValue(code);
+  // $("#fileName").val(feedName);
+  // $("#fileName").focus();
+  
+  //myCodeMirror.setValue(code);
+});

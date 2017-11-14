@@ -234,4 +234,15 @@ margin-bottom: 2px;
 
   .subFolder{
     padding-left: 50px !important;
+    cursor: pointer;
+
+}
+.subFolder:before {
+    content: "";
+    display: block;
+    background: url("/assets/design/arrow.png") no-repeat;
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin: 0 6px 0 0;
 }

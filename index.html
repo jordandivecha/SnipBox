@@ -56,18 +56,18 @@
 
             <div class="nav-center z-depth-2">
                 <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width ">
-                    <li class="tab col s3">
+                    <li class="tab col s4">
                         <a href="#snippetpage" class="teal-text text-accent-1">Editor</a>
                     </li>
-                    <li class="tab col s3">
+                    <li class="tab col s4">
                         <a href="#discoverpage" class="light-blue-text text-accent-1">Discover</a>
                     </li>
-                    <li class="tab col s3 ">
+                    <li class="tab col s4 ">
                         <a href="#library" class="teal-text text-accent-1">Library</a>
                     </li>
-                    <li class="tab col s3">
+                    <!-- <li class="tab col s3">
                         <a href="#tab4" class="teal-text text-accent-1">Cool Stuff</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </nav>
@@ -182,8 +182,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                        <a class="btn-floating tooltipped yellow clearbutton"onclick="Materialize.toast('Clean Slate!', 4000)" data-position="bottom" data-delay="50"
-                                            data-tooltip="Clear Snippet">
+                                        <a class="btn-floating tooltipped yellow clearbutton"onclick="Materialize.toast('Removed snippet!', 4000)" data-position="bottom" data-delay="50"
+                                            data-tooltip="Remove Snippet from Folder">
                                             <i class="material-icons">remove</i>
                                         </a>
                                     </li>
@@ -232,13 +232,14 @@
         </div>
         <div id="library" class="col s12">
             <div class="row">
-                <div class="col s1"></div>
-                <div class="col s4">
-                    <p class="white-text z-depth-3 flow-text searchinstructions">Search the user library for code snippets.</p>
+                <div class="col s12"></div>
+                <p class="white-text z-depth-3 center-align flow-text searchinstructions">Browse published code snippets.</p>
+                <!-- <div class="col s4">
+                    
                     <div class="card black" id="searchHolder">
                             <div class="input-field">
-                                <input id="searchInput" type="search">
-                                <label for="searchInput">Search Gists</label>
+                                <input id="searchInputLibrary" type="search">
+                                <label for="searchInput">Search Snippets</label>
     
                                 <button class="btn #00bfa5 teal accent-4 waves-light waves-effect" id="submitlibrarysearch" type="submit" name="action">Submit
                                     <i class="material-icons right">send</i>
@@ -246,30 +247,26 @@
     
                             </div>
                         </div>
+                </div> -->
+                <div class="col m6 s3">
+                        <div class="libraryfeed">
+                                
+                                
+                        </div>
                 </div>
-                <div class="col s6">
-                    
-                </div>
-                <div class="col s1"></div>
+                <div class="col m3"></div>
             </div>
 
-            <div class="row">
-                <div class="col s1 xs1"></div>
-                <div class="col s10 resultsHolder">
-
-
-                </div>
-                <div class="col s1 xs1"></div>
-            </div>
+        
         </div>
-        </div>
+        
 
 
 
         </div>
-        <div id="tab4" class="col s12"></div>
+        <!-- <div id="tab4" class="col s12"></div>
 
-        </div>
+        </div> -->
         </div>
 
 
