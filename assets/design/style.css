@@ -15,11 +15,19 @@ body {
     padding-left: 0px;
     background-color: #191D32 !important;
    
-    
+
 
 }
 
 
+input#fileName{
+    background-color: black;
+}
+
+.filenameholder{
+    background-color: #000000 !important;
+    line-height:30px;
+}
 .slackButton{
     width: 139px;
 }
@@ -66,7 +74,7 @@ body{
 }
 
 #snippetholder {
-    margin-top: 25px;
+    margin-top: 0px;
     position: relative;
 }
 
@@ -104,14 +112,16 @@ span{
 #searchHolder {
     padding: 10px;
     margin-top: 25px;
+    margin-bottom: 5px;
+    border: 2px 2px lightblue !important;
 }
 /* label color */
 .input-field label {
-    color: #dddddd;
+    color: #FFFFFF;
   }
   /* label focus color */
   .input-field input[type=text]:focus + label {
-    color: #000;
+    color: #FFFFFF;
   }
   /* label underline focus color */
   .input-field input[type=text]:focus {
@@ -130,9 +140,22 @@ span{
   }
   /* icon prefix focus color */
   .input-field .prefix.active {
-    color: #000;
+    color: #FFFFFF;
+  }
+  .label.active{
+      color: #FFFFFF;
+  }
+  .input-field.prefix.active{
+      background-color:#000000;
   }
 
+.input-field.filenameholder{
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+.fileName{
+margin-bottom: 2px;
+}
   .searchinstructions{
       margin-top: 50px;
   }
@@ -141,7 +164,9 @@ span{
     height: 80px !important;
     margin-bottom: 10px
   }
-  
+  .searchInput{
+     color:  #FFFFFF;
+  }
   .page-footer{
       height: 150px;
   }
@@ -178,4 +203,13 @@ span{
 
   .login{
       opacity: unset;
+  }
+
+  #fileName{
+      margin-bottom: 0px;
+  }
+
+  .footertainer{
+      display: block;
+      width: 100%;
   }
