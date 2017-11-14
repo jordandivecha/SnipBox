@@ -3,19 +3,6 @@ var encoded;
 var decoded;
 var nameInput;
 
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCl8d2onqD8JOpl1LEje_OWFuDwdXtjwjM",
-    authDomain: "snipbox-af82c.firebaseapp.com",
-    databaseURL: "https://snipbox-af82c.firebaseio.com",
-    projectId: "snipbox-af82c",
-    storageBucket: "snipbox-af82c.appspot.com",
-    messagingSenderId: "1006600670987"
-  };
-  firebase.initializeApp(config);
-
-  var database = firebase.database(); 
-
 
 // Encode the user's snippet when the save
 // button is clicked so that we can store
