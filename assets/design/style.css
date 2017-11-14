@@ -198,7 +198,9 @@ margin-bottom: 2px;
   }
 
   .loginholder{
-    opacity: 0.7;
+    /* opacity: 0.7; */
+    margin-top: 125px;
+    background-color: rgba(255, 255, 255, 0.678) !important;
   }
 
   .login{
@@ -209,7 +211,19 @@ margin-bottom: 2px;
       margin-bottom: 0px;
   }
 
-  .footertainer{
-      display: block;
+  
+
+  .footer-copyright{
       width: 100%;
+      text-align: center !important;
+      height: 50px;
+  }
+
+  .pfooter{
+      text-align: center;
+      width: 100%;
+  }
+
+  .octocat{
+      opacity: unset;
   }
