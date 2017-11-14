@@ -7,10 +7,10 @@ $(document).ready(function(){
 
 $('.collapsible').collapsible();
  // Open
- $('.collapsible').collapsible('open', 0);
+ $('.collapsible').collapsible('open', 1);
  
    // Close
-   $('.collapsible').collapsible('close', 0);
+  //$('.collapsible').collapsible('close', 0);
  
    // Destroy
 });
