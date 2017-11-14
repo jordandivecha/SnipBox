@@ -77,7 +77,9 @@ firebase.initializeApp(config);
     $(".copybutton").click(function(){
         copySnippet();
     });
-    
+  
+
+  // PULL IN FOLDER NAMES
     var userId = localStorage.getItem("uid");
     var starCountRef = firebase.database().ref('/users/' + userId + "/snippets/javascript");
     console.log("string");
@@ -92,3 +94,55 @@ firebase.initializeApp(config);
         $(".javascriptFolder").append($("<span>").addClass("subFolder right-align").text(fileName).append("</br>"))
       }
     });
+
+    // PULL IN SUBFOLDERS
+    $(document).on("click", ".subFolder", function(){
+      var folderName = window.btoa($(this).text())
+      return firebase.database().ref('/users/' + userId + "/snippets/javascript").once('value').then(function(snapshot) {
+        var info = snapshot.val()
+        var content = window.atob(info[folderName].content)
+        console.log(content)
+        myCodeMirror.setValue(content)
+        $("#fileName").val(window.atob(folderName))
+        // ...
+      });
+    })
+
+    // ====================================================
+     //               Published Button
+     // ====================================================
+     function publishSnippet() {
+      var filename = window.btoa($("#fileName").val());
+      
+      if(filename === ""){
+        alert("Please name your snippet!");
+        break;
+      };
+      var code = myCodeMirror.getValue();
+      code = window.btoa(code);
+      var obj = {filename: code};
+      firebase.database().ref('/published').set(obj);
+      console.log("Your code should be published.  Check Firebase.");
+    }
+    $(".publishbutton").click(function(){
+      publishSnippet();
+    });
+    // ====================================================
+    //               Published Snippet Feed
+    // ====================================================
+    var decodedFromFeed; //global to access through event listener and on click
+    
+    firebase.database().ref("/published").on("value", function(snapshot) {
+      var anchor = $("<a>");
+      var feedName = snapshot.child("published").key(); //this may not access key correctly
+      decodedFromFeed = window.atob(snapshot.child("published/" + feedName).val()); //should save decoded content of the key
+      anchor.attr("text", feedName).addClass("feedButton");
+      $(".publishfeed").prepend(anchor); //Add new anchor to the feed
+  
+    },function(errorObject) {
+    console.log("The read failed: " + errorObject.code);
+  });
+    $(document).on("click", ".publishFeed", function(){
+    var feedName = $(this).text();
+    myCodeMirror.setValue(decodedFromFeed);
+  });
