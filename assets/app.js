@@ -126,8 +126,6 @@ firebase.initializeApp(config);
       var feedName = $(this).text();
       myCodeMirror.setValue(decodedFromFeed);
     });
-
-    });
     
     var userId = localStorage.getItem("uid");
     var starCountRef = firebase.database().ref('/users/' + userId + "/snippets/javascript");
@@ -143,4 +141,5 @@ firebase.initializeApp(config);
         $(".javascriptFolder").append($("<span>").addClass("subFolder right-align").text(fileName).append("</br>"))
       }
     });
+
 
