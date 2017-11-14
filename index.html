@@ -133,10 +133,10 @@
 
 
                     <div class="col s8">
-                        <div class="card black" id="searchHolder">
-                            <div class="input-field filenameholder">
-                                <input id="fileName" type="search">
-                                <label id= "fileNameSet" for="searchInput">Name</label>
+                        <div class="card black active" id="searchHolder">
+                            <div class="input-field filenameholder active">
+                                <input id="fileName" type="search" class = "active">
+                                <label id= "fileNameSet" for="searchInput" class = "active">Name</label>
                             </div>
                         </div>
                         <div class="card light-blue accent-1" id="snippetholder">
@@ -176,11 +176,17 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="btn-floating tooltipped blue beautifybutton"onclick="Materialize.toast('Looks great!', 4000)" data-position="bottom" data-delay="50"
-                                        data-tooltip="Beautify">
-                                        <i class="material-icons">photo_filter</i>
+                                    <a class="btn-floating tooltipped blue createbutton"onclick="Materialize.toast('Get to work!', 4000)" data-position="bottom" data-delay="50"
+                                        data-tooltip="Create a New Snippet">
+                                        <i class="material-icons">add</i>
                                     </a>
                                 </li>
+                                <li>
+                                        <a class="btn-floating tooltipped yellow clearbutton"onclick="Materialize.toast('Clean Slate!', 4000)" data-position="bottom" data-delay="50"
+                                            data-tooltip="Clear Snippet">
+                                            <i class="material-icons">remove</i>
+                                        </a>
+                                    </li>
                             </ul>
                         </div>
                     </div>
