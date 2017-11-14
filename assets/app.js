@@ -198,6 +198,7 @@ firebase.initializeApp(config);
   
   firebase.database().ref("published/javascript").on("value", function(snapshot) {
     var result = (snapshot.val());
+    (".libraryfeed").empty();
     for (var i in result){
       var fileName = window.atob(i);
       var code = window.atob(result[i].content);
