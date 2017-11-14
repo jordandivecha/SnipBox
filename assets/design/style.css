@@ -209,7 +209,15 @@ margin-bottom: 2px;
       margin-bottom: 0px;
   }
 
-  .footertainer{
-      display: block;
+  
+
+  .footer-copyright{
+      width: 100%;
+      text-align: center !important;
+      height: 50px;
+  }
+
+  .pfooter{
+      text-align: center;
       width: 100%;
   }
