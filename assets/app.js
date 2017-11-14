@@ -48,7 +48,7 @@ firebase.initializeApp(config);
         var filename = window.btoa($("#fileName").val());
         var code = myCodeMirror.getValue();
         var userId = localStorage.getItem("uid");
-        code = window.btoa(code)
+        code = window.btoa(code);
         var obj = {};
         obj["content"] = code;
         firebase.database().ref('users/' + userId + '/snippets/javascript/' + filename).set(obj);
@@ -57,6 +57,8 @@ firebase.initializeApp(config);
     $(".savebutton").click(function(){
         saveSnippet();
     })
+
+
 
     function copySnippet(){
         var dummy = document.createElement("input");
@@ -69,10 +71,62 @@ firebase.initializeApp(config);
         //document.getElementById("dummy_id").value=val;
         dummy.select();
         document.execCommand("copy");
-        document.body.removeChild(dummy)
+        document.body.removeChild(dummy);
+        console.log("Your snippet was copied to the clipboard.");
     
     }
 
     $(".copybutton").click(function(){
         copySnippet();
     })
+
+
+     // ====================================================
+     //               Published Button
+     // ====================================================
+    function publishSnippet() {
+        var filename = window.btoa($("#fileName").val());
+        
+        if(filename === ""){
+          alert("Please name your snippet!");
+          break;
+        };
+
+        var code = myCodeMirror.getValue();
+        code = window.btoa(code);
+        var obj = {filename: code};
+        firebase.database().ref('/published').set(obj);
+        console.log("Your code should be published.  Check Firebase.");
+      }
+
+      $(".publishbutton").click(function(){
+        publishSnippet();
+      });
+
+
+      // ====================================================
+      //               Published Snippet Feed
+      // ====================================================
+      var decodedFromFeed; //global to access through event listener and on click
+      
+      firebase.database().ref("/published").on("value", function(snapshot) {
+        var anchor = $("<a>");
+        var feedName = snapshot.child("published").key(); //this may not access key correctly
+        decodedFromFeed = window.atob(snapshot.child("published/" + feedName).val()); //should save decoded content of the key
+        anchor.attr("text", feedName).addClass("feedButton");
+        $(".publishfeed").prepend(anchor); //Add new anchor to the feed
+    
+      },function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
+
+      $(document).on("click", ".publishFeed", function(){
+      var feedName = $(this).text();
+      myCodeMirror.setValue(decodedFromFeed);
+    });
+
+
+
+
+
+
