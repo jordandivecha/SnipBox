@@ -1,4 +1,5 @@
 // Firebase grab info
+
 var provider = new firebase.auth.GithubAuthProvider();
 var config = {
  apiKey: "AIzaSyCl8d2onqD8JOpl1LEje_OWFuDwdXtjwjM",
@@ -75,4 +76,19 @@ firebase.initializeApp(config);
 
     $(".copybutton").click(function(){
         copySnippet();
-    })
+    });
+    
+    var userId = localStorage.getItem("uid");
+    var starCountRef = firebase.database().ref('/users/' + userId + "/snippets/javascript");
+    console.log("string");
+    starCountRef.on('value', function(snapshot) {
+      $(".javascriptFolder").empty();
+      var JavascriptFolders = snapshot.val();
+      console.log(JavascriptFolders);
+      for (var x in JavascriptFolders){
+        var fileName = window.atob(x)
+        var content = window.atob(JavascriptFolders[x].content)
+        console.log(fileName, ":", content)
+        $(".javascriptFolder").append($("<span>").addClass("subFolder right-align").text(fileName).append("</br>"))
+      }
+    });
