@@ -58,4 +58,21 @@ firebase.initializeApp(config);
         saveSnippet();
     })
 
+    function copySnippet(){
+        var dummy = document.createElement("input");
+        //dummy.style.display = 'none'
+        document.body.appendChild(dummy);
+        //$(dummy).css('display','none');
+        dummy.setAttribute("id", "dummy_id");
+        //dummy.setAttribute('value', document.URL + '; ' + document.title)
+        dummy.setAttribute('value', myCodeMirror.getValue());
+        //document.getElementById("dummy_id").value=val;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy)
     
+    }
+
+    $(".copybutton").click(function(){
+        copySnippet();
+    })
