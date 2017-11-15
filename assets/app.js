@@ -113,22 +113,22 @@ firebase.initializeApp(config);
     // ====================================================
      //               Published Button
      // ====================================================
-     function publishSnippet() {
-      var filename = window.btoa($("#fileName").val());
+    //  function publishSnippet() {
+    //   var filename = window.btoa($("#fileName").val());
       
-      if(filename === ""){
-        alert("Please name your snippet!");
-        break;
-      };
-      var code = myCodeMirror.getValue();
-      code = window.btoa(code);
-      var obj = {filename: code};
-      firebase.database().ref('/published').set(obj);
-      console.log("Your code should be published.  Check Firebase.");
-    }
-    $(".publishbutton").click(function(){
-      publishSnippet();
-    });
+    //   if(filename === ""){
+    //     alert("Please name your snippet!");
+    //     break;
+    //   };
+    //   var code = myCodeMirror.getValue();
+    //   code = window.btoa(code);
+    //   var obj = {filename: code};
+    //   firebase.database().ref('/published').set(obj);
+    //   console.log("Your code should be published.  Check Firebase.");
+    // }
+    // $(".publishbutton").click(function(){
+    //   publishSnippet();
+    // });
     // ====================================================
     //               Published Snippet Feed
     // ====================================================
@@ -198,7 +198,7 @@ firebase.initializeApp(config);
   
   firebase.database().ref("published/javascript").on("value", function(snapshot) {
     var result = (snapshot.val());
-    (".libraryfeed").empty();
+    $(".libraryfeed").empty();
     for (var i in result){
       var fileName = window.atob(i);
       var code = window.atob(result[i].content);

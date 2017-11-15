@@ -238,11 +238,20 @@ margin-bottom: 2px;
 
 }
 .subFolder:before {
-    content: "";
+    
     display: block;
     background: url("/assets/design/arrow.png") no-repeat;
     width: 10px;
     height: 10px;
     float: left;
     margin: 0 6px 0 0;
+}
+.publishFeed{
+    padding: unset;
+    padding: 25px;
+    text-align: center;
+
+}
+.libraryfeed{
+    text-align: center;
 }
