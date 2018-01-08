@@ -2,8 +2,8 @@
 
 ## Developers
 
-### Back End: Paragraph 1
+### Lino Suarez : ( Javascript Dev. and Logic )
 
-### Front End: Paragraph 1
+### Jordan Chadsey: ( Front-End using Materialize )
 
-### Database: Paragraph 1
+### Tyler Proctor: ( Firebase Connections and Logic )
