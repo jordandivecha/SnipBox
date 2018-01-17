@@ -7,9 +7,9 @@
 <h2 id="about">About</h2>
 <p>SnipBox is an elegant code snippet solution for developers that allows each user to write, save, copy and share snippets. While each user has his/her own folders (hosted on Firebase with Github authorization), snippets may also be published to or saved from the SnipBox public, user-generated library. Developers may also draw inspiration from Github gists through an integrated search platform.</p>
 <h2 id="screenshots">Screenshots</h2>
-<p><img src="https://imgur.com/lIWVLDE" alt="Code Editor">
-<img src="https://imgur.com/iZdYAjF" alt="Gist Search">
-<img src="https://imgur.com/GKfAuIG" alt="User-Generated Library"></p>
+<p><img src="https://i.imgur.com/GKfAuIG.png" alt="Code Editor">
+<img src="https://imgur.com/iZdYAjF.png." alt="Gist Search">
+<img src="https://imgur.com/GKfAuIG.png" alt="User-Generated Library"></p>
 <h2 id="contributors">Contributors</h2>
 <p><strong>Jordan Chadsey</strong> - <a href="https://github.com/jordanchadsey">Github</a> - UI/UX Design (Materialize) Logic</p>
 <p><strong>Tyler Proctor</strong> - <a href="https://github.com/atpdev14">Github</a> - Firebase Database &amp; Authentication Logic</p>
